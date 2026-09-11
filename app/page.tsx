@@ -1,5 +1,11 @@
 const abstract =
-  'We presents an object-centric 3D scene reconstruction system that augments point-based scene geometry with individually manipulable textured meshes for selected object instances in a shared world frame. Its core module, Observation-Grounded Diffeomorphic Deformation (OGDD), is a training-free method that grounds each generated mesh against the corresponding partial object point cloud. OGDD first corrects residual scale and pose through bounded similarity alignment, then applies coarse-to-fine B-spline free-form deformation with bidirectional robust visible-surface fitting, multiple deformation regularisation terms including spatially varying bending regularisation derived from multi-view evidence, and injectivity constraints. The resulting transformation is applied to the entire mesh whilst preserving its connectivity and texture data. Across 12 CO3D sequences, OGDD reduces total bidirectional Chamfer distance by \(16.2\%\), test-view bidirectional Chamfer distance by \(41.8\%\), and test-view truncated depth MAE by \(34.5\%\), while increasing test-view silhouette IoU by \(7.062\) percentage points. Three self-captured multi-object sequences further demonstrate the full system, representing selected object instances as separate textured meshes within the surrounding point-based scene geometry.';
+  'We presents an object-centric 3D scene reconstruction system that augments point-based scene geometry with individually manipulable textured meshes for selected object instances in a shared world frame. 
+  Its core module, Observation-Grounded Diffeomorphic Deformation (OGDD), is a training-free method that grounds each generated mesh against the corresponding partial object point cloud. 
+    OGDD first corrects residual scale and pose through bounded similarity alignment, then applies coarse-to-fine B-spline free-form deformation with bidirectional robust visible-surface fitting, 
+    multiple deformation regularisation terms including spatially varying bending regularisation derived from multi-view evidence, and injectivity constraints. 
+    The resulting transformation is applied to the entire mesh whilst preserving its connectivity and texture data. 
+    Across 12 CO3D sequences, OGDD reduces total bidirectional Chamfer distance by 16.2%, test-view bidirectional Chamfer distance by 41.8%, and test-view truncated depth MAE by 34.5%, while increasing test-view silhouette IoU by 7.062 percentage points. 
+    Three self-captured multi-object sequences further demonstrate the full system, representing selected object instances as separate textured meshes within the surrounding point-based scene geometry.';
 
 export default function Home() {
   return (
@@ -69,9 +75,9 @@ export default function Home() {
               alt="Overview of the object-centric 3D scene reconstruction pipeline and Observation-Grounded Diffeomorphic Deformation"
             />
             <figcaption>
-              In our system, AMB3R and SAM 3 recover a shared scene reconstruction and instance masks (blue). 
-              Masked pointmaps form the object point clouds, and SAM 3D supplies per-view candidate meshes for each object (purple). 
-              ICP-based candidate selection and Observation-Grounded Diffeomorphic Deformation (OGDD) then optimise each mesh for insertion into the shared world frame (green).
+              In our system, AMB3R and SAM 3 recover a shared scene reconstruction and instance masks. 
+              Masked pointmaps form the object point clouds, and SAM 3D supplies per-view candidate meshes for each object. 
+              ICP-based candidate selection and Observation-Grounded Diffeomorphic Deformation (OGDD) then optimise each mesh for insertion into the shared world frame.
             </figcaption>
           </figure>
 
@@ -82,7 +88,7 @@ export default function Home() {
               alt="Detailed schematic of Observation-Grounded Diffeomorphic Deformation, from visibility-aware source sampling and bounded global alignment to coarse-to-fine B-spline deformation and the complete optimised mesh"
             />
             <figcaption>
-              Through OGDD, source samples (orange) are fitted to target observations (blue). 
+              Through OGDD, source samples are fitted to target observations. 
               (a) Ray casting retains only camera-visible source surfaces. 
               (b) Bounded similarity alignment removes residual pose and scale error. 
               (c) Coarse-to-fine B-spline optimisation corrects local shape, with multi-view evidence controlling bending stiffness and validity checks constraining each update. 
