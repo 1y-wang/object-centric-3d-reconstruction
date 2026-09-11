@@ -32,6 +32,17 @@ export default function Home() {
           >
             Lourdes Agapito
           </a>
+          <span className="separator" aria-hidden="true">
+            ·
+          </span>
+          <a
+            className="person"
+            href="https://hengyiwang.github.io/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Hengyi Wang
+          </a >
         </div>
         <p className="affiliation">University College London</p>
       </header>
